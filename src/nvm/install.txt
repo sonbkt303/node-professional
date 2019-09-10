@@ -1,0 +1,33 @@
+Install NVM
+ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.3/install.sh | bash
+
+Installing an specific Node version
+
+Listing available remote versions for installation
+  nvm ls-remote
+Installing a remote version
+  nvm install <version>
+For example
+  nvm install 0.10.13
+
+Using an already installed node version
+
+Install nvm on Mac OSX
+
+TEST THAT NVM WAS PROPERLY INSTALLED
+To test that nvm was properly installed, close and re-open Terminal and enter nvm. If you get a nvm: command not
+found message, your OS may not have the necessary .bash_profile file. In Terminal, enter touch ~/.bash_profile
+and run the above install script again.
+If you still get nvm: command not found, try the following:
+In Terminal, enter nano .bashrc. You should see an export script almost identical to the following:
+export NVM_DIR=”/Users/johndoe/.nvm” [ -s “$NVM_DIR/nvm.sh” ] && . “$NVM_DIR/nvm.sh”
+Copy the export script and remove it from .bashrc
+Save and Close the .bashrc file (CTRL+O – Enter – CTRL+X)
+Next, enter nano .bash_profile to open the Bash Profile
+Paste the export script you copied into the Bash Profile on a new line
+Save and Close the Bash Profile (CTRL+O – Enter – CTRL+X)
+Finally enter nano .bashrc to re-open the .bashrc file
+Paste the following line into the file:
+source ~/.nvm/nvm.sh
+Save and Close (CTRL+O – Enter – CTRL+X)
+Restart Terminal and enter nvm to test if it's working
